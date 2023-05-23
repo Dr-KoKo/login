@@ -37,6 +37,8 @@ public class LoginCheckFilter implements Filter {
         }
 
         chain.doFilter(request, response);
+
+        log.info("인증 체크 필터 끝 {}", requestURI);
     }
 
     private boolean isLoginCheckPath(String requestURI) {
